@@ -132,32 +132,6 @@ def Product_List():
 	rows = cur.fetchall()
 	return render_template('productdetails.html',rows = rows)
 
-#add student record in database
-
-@app.route('/data')
-def data():
-    return render_template('data.html')
-
-@app.route('/adddata',methods=['POST'])
-def adddata():
-	if request.method == 'POST':
-		try:
-			file1 = request.files['CJfile']
-			rows = csv.reader(file1)
-			print(rows)
-			msg='Successfully File Data Added to Database'
-			with sql.connect('database.db') as con:
-				cur =con.cursor()
-				cur.executemany("INSERT INTO students VALUES (?,?,?,?)",rows)
-				
-		except:
-			con.rollback()
-			msg='File Data Not Added to Database'
-
-		finally:
-		    return render_template("result.html",msg=msg)
-		    con.close()
-
 if __name__ == '__main__':
  	app.run(debug=True,host="0.0.0.0", port=8000)
  	

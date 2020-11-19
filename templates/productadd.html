@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <title>Add New Product</title>
+  </head>
+  <body class="bg-dark">
+
+  	<div class="container my-5">
+  		<form action="{{url_for('Insert_Product')}}" method="POST">
+        <div class="row mt-5">
+          <div class="col">
+            <input type="text" required="" name="p_name" class="form-control" placeholder="Product Name">
+          </div>
+          <div class="col">
+            <input type="text" required="" name="p_brand" class="form-control" placeholder="Product Brand">
+          </div>
+        </div>
+
+        <div class="row mt-5">
+          <div class="col">
+            <input type="text" required="" name="r_price" class="form-control" placeholder="Regular Price">
+          </div>
+          <div class="col">
+            <input type="text" required="" name="o_price" class="form-control" placeholder="Offer Price">
+          </div>
+        </div>
+        
+        <div class="row mt-5">
+          <div class="col">
+            <input type="text" required="" name="p_currency" class="form-control" placeholder="Currency">
+          </div>
+          <div class="col">
+            <input type="text" required="" name="cl1" class="form-control" placeholder="Classification 1">
+          </div>
+        </div>
+        
+        <div class="row mt-5">
+          <div class="col">
+            <input type="text" required="" name="cl2" class="form-control" placeholder="Classification 2">
+          </div>
+          <div class="col">
+            <input type="text" required="" name="cl3" class="form-control" placeholder="Classification 3">
+          </div>
+        </div>
+
+        <div class="row mt-5">
+          <div class="col">
+            <input type="text" required="" name="cl4" class="form-control" placeholder="Classification 4">
+          </div>
+          <div class="col">
+            <input type="text" required="" name="p_image" class="form-control" placeholder="Image URL">
+          </div>
+        </div>
+        <div class="row mt-3 d-flex justify-content-center">
+          <button type="submit" name="submit" class="btn btn-light font-weight-bold">Submit</button>
+        </div>
+      </form>
+
+      <div class="row my-5 justify-content-center text-white">
+        <a class="text-white" href="/">Home</a>
+      </div>
+  	</div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+  </body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <title>Product Edit Records</title>
+  </head>
+  <body>
+    <h1 class="mt-3 text-center">Product Edit Page</h1>
+  
+  	<div class="container my-5">
+      {% for row in rows %}
+
+  		<form action=" {{ url_for('Product_Update2', product_id=row['P_ID']) }}" method="POST">
+        <div class="row mt-5">
+          <div class="col">
+            <input type="text" name="p_name" value="{{row['Name']}}" class="form-control" placeholder="Product Name">
+          </div>
+          <div class="col">
+            <input type="text" name="p_brand" value="{{row['Brand_Name']}}" class="form-control" placeholder="Product Brand">
+          </div>
+        </div>
+
+        <div class="row mt-5">
+          <div class="col">
+            <input type="text" name="r_price" value="{{row['Regular_Price']}}" class="form-control" placeholder="Regular Price">
+          </div>
+          <div class="col">
+            <input type="text" name="o_price" value="{{row['Offer_Price']}}" class="form-control" placeholder="Offer Price">
+          </div>
+        </div>
+        
+        <div class="row mt-5">
+          <div class="col">
+            <input type="text" name="p_currency" value="{{row['Currency']}}" class="form-control" placeholder="Currency">
+          </div>
+          <div class="col">
+            <input type="text" name="cl1" value="{{row['CL1']}}" class="form-control" placeholder="Classification 1">
+          </div>
+        </div>
+        
+        <div class="row mt-5">
+          <div class="col">
+            <input type="text" name="cl2" value="{{row['CL2']}}" class="form-control" placeholder="Classification 2">
+          </div>
+          <div class="col">
+            <input type="text" name="cl3" value="{{row['CL3']}}" class="form-control" placeholder="Classification 3">
+          </div>
+        </div>
+
+        <div class="row mt-5">
+          <div class="col">
+            <input type="text" name="cl4" value="{{row['CL4']}}" class="form-control" placeholder="Classification 4">
+          </div>
+          <div class="col">
+            <input type="text" name="p_image" value="{{row['Image_Url']}}" class="form-control" placeholder="Image URL">
+          </div>
+        </div>
+        <div class="row mt-3 d-flex justify-content-center">
+          <button type="submit" name="submit" class="btn btn-dark">Submit</button>
+        </div>
+      </form>
+      {% endfor %}
+  	</div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+  </body>
+</html>
